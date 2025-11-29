@@ -1,0 +1,462 @@
+/* ---------------- HOME PAGE ---------------- */
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 60px 80px;
+}
+/* ---------- CONTENT WRAPPER (RIGHT PANEL) ----------- */
+
+.content-wrapper {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+
+  background: #151515; /* Slightly lighter than sidebar */
+  
+  border-radius: 26px 0 0 26px;  /* Curved left corners like screenshot */
+  margin: 12px 12px 12px 0;      /* Small spacing around panel */
+
+  box-shadow:
+    inset 0 0 0 1px #1f1f1f,        /* Thin border */
+    0 0 40px rgba(0, 0, 0, 0.45);   /* Soft ambient shadow */
+  
+  padding: 50px 70px;  /* Space inside the panel */
+}
+
+/* Ensure main-content isn't doing padding anymore */
+.main-content {
+  padding: 0;
+}
+
+/* ---- HERO ---- */
+.hero-section {
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+.hero-title,
+.hero-subtitle,
+.section-title {
+  font-family: var(--font-heading);
+  letter-spacing: -0.5px;
+}
+
+.hero-description {
+  font-family: var(--font-body);
+}
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: var(--heading-font);
+}
+
+.hero-title span {
+  color: #b399ff;
+}
+
+.hero-subtitle {
+  font-size: 32px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #dcdcdc;
+}
+
+.location-badge {
+  background: #1d1d1d;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.hero-description {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #b3b3b3;
+  max-width: 650px;
+}
+
+/* ---- BUTTONS ---- */
+.hero-btn-group {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.btn-about,
+.btn-copy {
+  padding: 12px 22px;
+  background: #1d1d1d;
+  border: 1px solid #2d2d2d;
+  color: #e0e0e0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.15s;
+  font-size: 15px;
+}
+
+.btn-about:hover,
+.btn-copy:hover {
+  background: #2a2a2a;
+}
+
+/* ---- SELECTED WORK ---- */
+.section-title {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+}
+
+.work-card {
+  background: #151515;
+  border: 1px solid #222;
+  border-radius: 14px;
+  padding: 16px;
+  transition: 0.15s;
+}
+
+.work-card:hover {
+  background: #1d1d1d;
+  transform: translateY(-4px);
+}
+
+.work-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.work-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.work-desc {
+  font-size: 14px;
+  color: #b3b3b3;
+  margin-top: 4px;
+}
+
+
+/* ---------------- SKILLS SECTION ---------------- */
+
+.skills-section {
+  margin-top: 60px;
+}
+
+.skills-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.skill-cardd {
+  background: #1a1a1a;
+  border-radius: 14px;
+  padding: 22px;
+  width: 17vw;
+  border: 1px solid #262626;
+
+  box-shadow:
+    0 0 20px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  transition: 0.2s ease;
+}
+
+.skill-card:hover {
+  background: #202020;
+  transform: translateY(-3px);
+  border-color: #333;
+}
+
+.skill-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-item {
+  padding: 7px 14px;
+  background: #0e0e0e;
+  border-radius: 8px;
+
+  border: 1px solid #232323;
+  color: #d0d0d0;
+  font-size: 14px;
+  font-family: var(--font-body);
+
+  transition: 0.2s ease;
+}
+
+.skill-item:hover {
+  background: #161616;
+  border-color: #3d3d3d;
+  color: #ffffff;
+}
+
+
+/* ---------------- CONTACT SECTION ---------------- */
+
+.contact-section {
+  margin-top: 80px;
+}
+
+.contact-title {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.contact-subtext {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #c2c2c2;
+  max-width: 550px;
+  line-height: 1.5;
+}
+
+/* Email + Phone row */
+.contact-flex {
+  display: flex;
+  gap: 50px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+/* Single contact item */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Circle icon background */
+.contact-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #151515;
+  border: 1px solid #2a2a2a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.05),
+    0 3px 20px rgba(0, 0, 0, 0.35);
+
+  transition: 0.2s ease;
+}
+
+.contact-item:hover .contact-icon {
+  background: #1b1b1b;
+  border-color: #3a3a3a;
+}
+
+/* Labels */
+.contact-label {
+  font-size: 14px;
+  color: #9c9c9c;
+  font-family: var(--font-body);
+}
+
+.contact-value {
+  margin-top: 2px;
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+  font-family: var(--font-heading);
+}
+
+/* Button */
+.contact-btn {
+  margin-top: 35px;
+  background: #1a1a1a;
+  color: white;
+  padding: 12px 28px;
+
+  border: 1px solid #2c2c2c;
+  border-radius: 12px;
+
+  font-size: 15px;
+  font-family: var(--font-body);
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.contact-btn:hover {
+  background: #2a2a2a;
+  border-color: #3d3d3d;
+  transform: translateY(-2px);
+}
+
+
+
+
+
+/* ---------------- CONTACT PAGE ---------------- */
+
+.contact-page {
+  padding-bottom: 100px;
+}
+
+/* TOP TITLE */
+.contact-main-title {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.contact-main-subtext {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #b8b8b8;
+  max-width: 550px;
+}
+
+/* ------- EMAIL & PHONE ------- */
+
+.contact-info-row {
+  display: flex;
+  gap: 60px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.contact-info-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  background: #151515;
+  border: 1px solid #262626;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.05),
+    0 3px 18px rgba(0,0,0,0.35);
+}
+
+.contact-info-label {
+  font-size: 14px;
+  color: #8e8e8e;
+}
+
+.contact-info-value {
+  margin-top: 2px;
+  font-size: 17px;
+  font-family: var(--font-heading);
+  color: white;
+}
+
+/* ------- SEND A MESSAGE FORM ------- */
+
+.send-message-title {
+  margin-top: 60px;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Form Box */
+.contact-form-wrapper {
+  margin-top: 25px;
+  background: #151515;
+  border-radius: 16px;
+  border: 1px solid #262626;
+
+  padding: 28px;
+  max-width: 650px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.04),
+    0 12px 40px rgba(0,0,0,0.35);
+}
+
+/* Labels */
+.form-label {
+  font-size: 14px;
+  color: #bcbcbc;
+  margin-bottom: 6px;
+  margin-top: 12px;
+}
+
+/* Inputs */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+
+  background: #0f0f0f;
+  border: 1px solid #262626;
+  border-radius: 12px;
+
+  font-size: 15px;
+  color: #f0f0f0;
+
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #444;
+  background: #161616;
+}
+
+.form-textarea {
+  height: 140px;
+  resize: none;
+}
+
+/* Button */
+.form-submit-btn {
+  margin-top: 20px;
+
+  background: #1f1f1f;
+  color: white;
+  padding: 12px 26px;
+
+  border: 1px solid #2f2f2f;
+  border-radius: 12px;
+
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.form-submit-btn:hover {
+  background: #2a2a2a;
+  border-color: #444;
+  transform: translateY(-2px);
+}
