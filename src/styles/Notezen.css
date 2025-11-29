@@ -3,8 +3,7 @@
 .project-page {
   max-width: 1000px;
   margin: 0 auto;
-  padding-top: 22px;
-  padding-bottom: 120px;
+  padding: 22px 40px 120px;
 }
 
 /* top back link */
@@ -96,7 +95,7 @@
 }
 
 .project-section {
-  margin-top: 36px;
+  margin-top: 40px;
 }
 
 .section-title {
@@ -172,11 +171,98 @@
   object-fit: cover;
 }
 
-/* responsive */
-@media (max-width: 880px) {
-  .project-title { font-size: 32px; }
-  .project-hero-image { border-radius: 12px; }
-  .project-page { padding: 18px; }
-  .project-meta { gap: 14px; }
-  .btn-live { padding: 10px 14px; }
+
+/* =============================== */
+/* 📱 RESPONSIVE DESIGN */
+/* =============================== */
+
+/* Tablets - Medium Screens */
+@media (max-width: 1024px) {
+  .project-page {
+    padding: 22px 28px 100px;
+  }
+
+  .project-title {
+    font-size: 38px;
+  }
+
+  .lead,
+  .project-section p {
+    max-width: 100%;
+  }
+}
+
+/* Small Tablets / Large Phones */
+@media (max-width: 768px) {
+  .project-page {
+    padding: 20px;
+  }
+
+  .project-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .project-hero-image {
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 18px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .project-page {
+    padding: 16px;
+  }
+
+  .back-link {
+    font-size: 14px;
+  }
+
+  .project-title {
+    font-size: 26px;
+  }
+
+  .gallery-image {
+    border-radius: 10px;
+  }
+
+  .feature-card {
+    padding: 14px;
+  }
+
+  .btn-live {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}
+
+/* Small & very small devices */
+@media (max-width: 360px) {
+  .project-title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .project-section p,
+  .lead {
+    font-size: 15px;
+  }
 }

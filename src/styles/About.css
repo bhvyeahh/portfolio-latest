@@ -355,3 +355,198 @@
 }
 
 
+/* =========================================================
+   GLOBAL RESPONSIVE FIXES
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .content-wrapper {
+    padding: 40px 40px;
+  }
+}
+
+/* ========== SIDEBAR ========== */
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    left: -270px;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    z-index: 9999;
+    transition: 0.35s ease;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Add hamburger space */
+  .layout-container {
+    padding-left: 0 !important;
+  }
+}
+
+/* ========== HOME PAGE ========== */
+@media (max-width: 850px) {
+  .content-wrapper {
+    padding: 30px 25px;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 22px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-about,
+  .btn-copy {
+    width: 100%;
+    text-align: center;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== PROJECTS GRID ========== */
+@media (max-width: 768px) {
+  .projects-title {
+    font-size: 32px;
+  }
+
+  .projects-subtext {
+    font-size: 15px;
+  }
+
+  .projects-grid {
+    gap: 26px;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .project-image {
+    height: 210px;
+  }
+}
+
+/* ========== NOTEZEN CASE STUDY PAGE ========== */
+@media (max-width: 880px) {
+  .project-page {
+    padding: 20px 16px;
+  }
+
+  .project-title {
+    font-size: 32px;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-image {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .project-title {
+    font-size: 26px;
+  }
+
+  .lead {
+    font-size: 15px;
+  }
+
+  .project-section p {
+    font-size: 14px;
+  }
+}
+
+/* ========== ABOUT PAGE ========== */
+@media (max-width: 900px) {
+  .about-page {
+    padding: 40px 25px;
+  }
+
+  .about-header {
+    flex-direction: column;
+    text-align: left;
+    gap: 20px;
+  }
+
+  .about-title {
+    font-size: 32px;
+  }
+
+  .about-role {
+    font-size: 22px;
+  }
+
+  .about-bio {
+    font-size: 16px;
+  }
+
+  .about-img {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 700px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .exp-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .edu-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-row {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+/* ========== EXPERIENCE TIMELINE ========== */
+@media (max-width: 600px) {
+  .experience-timeline {
+    padding-left: 20px;
+  }
+
+  .experience-timeline::before {
+    left: 10px;
+  }
+
+  .exp-marker {
+    left: -18px;
+  }
+}
