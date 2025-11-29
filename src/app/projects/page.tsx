@@ -22,7 +22,7 @@ export default function ProjectsPage() {
             className="project-image"
           />
           <h3 className="project-name">NoteZen – Learning Platform</h3>
-          <p className="project-year">2023 – 2024</p>
+          <p className="project-year">2025</p>
         </Link>
 
         <Link href="/projects/api-reviewer" className="project-card">
@@ -33,8 +33,8 @@ export default function ProjectsPage() {
             height={400}
             className="project-image"
           />
-          <h3 className="project-name">TripMate – Travel Planner</h3>
-          <p className="project-year">2023 – 2024</p>
+          <h3 className="project-name">AI-API Reviewer (Gemini API)</h3>
+          <p className="project-year">2025</p>
         </Link>
 
       </div>
