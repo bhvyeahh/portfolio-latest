@@ -6,7 +6,7 @@ export default function ContactPage() {
       {/* ------- TOP TITLE ------- */}
       <h1 className="contact-main-title">Contact</h1>
       <p className="contact-main-subtext">
-        I'm always excited to collaborate on innovative and exciting projects!
+        I&apos;m always excited to collaborate on innovative and exciting projects!
       </p>
 
       {/* ------- EMAIL + PHONE SECTION ------- */}

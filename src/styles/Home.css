@@ -218,6 +218,8 @@
 
 .contact-section {
   margin-top: 80px;
+  height: 45vh;
+  /* margin-bottom: 80px; */
 }
 
 .contact-title {

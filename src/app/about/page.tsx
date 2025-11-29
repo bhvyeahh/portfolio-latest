@@ -11,7 +11,7 @@ export default function AboutPage() {
           <h2 className="about-role">MERN Developer</h2>
 
           <p className="about-bio">
-            I'm Bhavya, a MERN developer who builds fast, clean and user-focused
+            I&apos;m Bhavya, a MERN developer who builds fast, clean and user-focused
             web applications. I specialise in smooth UI/UX, reliable APIs and
             scalable backend logic.
             <br />
@@ -136,7 +136,7 @@ export default function AboutPage() {
       <section className="about-contact">
         <h2 className="section-heading">Got questions?</h2>
         <p className="contact-sub">
-          I'm always excited to collaborate on new ideas and interesting
+          I&apos;m always excited to collaborate on new ideas and interesting
           projects!
         </p>
 

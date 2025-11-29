@@ -7,7 +7,7 @@ export default function HomePage() {
       {/* ------------ HERO SECTION ------------ */}
       <section className="hero-section">
         <h1 className="hero-title">
-          Hello! I’m <span>Bhavya</span>
+          Hello! I&apos;m <span>Bhavya</span>
         </h1>
 
         <h2 className="hero-subtitle">
@@ -123,7 +123,7 @@ export default function HomePage() {
       <section className="contact-section">
         <h3 className="contact-title">Got questions?</h3>
         <p className="contact-subtext">
-          I'm always excited to collaborate on innovative and exciting projects!
+          I&apos;m always excited to collaborate on innovative and exciting projects!
         </p>
 
         <div className="contact-flex">
