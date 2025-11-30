@@ -1,5 +1,6 @@
 import PageTransition from "../components/PageTransition";
 import Sidebar from "../components/usableComponents/SidebarLayout";
+import Ribbons from "../components/ui/Ribbons"; 
 
 import "./globals.css";
 import "../styles/SideBar.css";
@@ -28,9 +29,31 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${urbanist.variable}`}>
-      <body>
-        <div className="layout-container">
-          {/* SIDEBAR (Client Component for Active Tab) */}
+      <body style={{ backgroundColor: '#050505', position: 'relative' }}> 
+        {/* Set a dark background on body so white ribbons show up */}
+        
+        {/* === LAYER 1: RIBBONS (Fixed Background) === */}
+        <div style={{
+          position: 'fixed',
+          inset: 0,           // Covers entire screen
+          zIndex: 0,          // Layer 0
+          pointerEvents: 'none', // Lets clicks pass through
+        }}>
+          <Ribbons 
+            baseThickness={30}
+            // Use bright opacity colors so they pop against dark bg
+            colors={['#888888', '#aaaaaa', '#ffffff']} 
+            speedMultiplier={1.5} 
+            maxAge={800}
+            enableFade={true}
+            enableShaderEffect={true}
+          />
+        </div>
+
+        {/* === LAYER 2: CONTENT (Sits on top) === */}
+        {/* Important: layout-container must NOT have a solid background color in CSS */}
+        <div className="layout-container" style={{ position: 'relative', zIndex: 1 }}>
+          
           <Sidebar />
 
           <div className="content-wrapper">
@@ -38,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <main className="main-content">{children}</main>
             </PageTransition>
           </div>
+          
         </div>
       </body>
     </html>

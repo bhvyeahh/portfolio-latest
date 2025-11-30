@@ -1,5 +1,8 @@
-import Image from "next/image";
+"use client"; // Required for the TiltedCard interaction
+import React from 'react';
 import "../../styles/About.css";
+// Import the component
+import TiltedCard from "@/components/ui/TiltedCard"; 
 
 export default function AboutPage() {
   return (
@@ -22,16 +25,29 @@ export default function AboutPage() {
         </div>
 
         <div className="about-photo">
-          <Image
-            src="/images/logo.jpg" // change to your image
-            alt="Bhavya Rathore"
-            width={230}
-            height={230}
-            className="about-img"
+          {/* REPLACED Static Image with TiltedCard */}
+          <TiltedCard
+            imageSrc="/images/logo.jpg" // Your image path
+            altText="Bhavya Rathore"
+            captionText="Bhavya Rathore - MERN Developer"
+            containerHeight="300px" // Slightly larger than image to allow movement
+            containerWidth="300px"
+            imageHeight="230px" // Matches your original design
+            imageWidth="230px"
+            rotateAmplitude={12}
+            scaleOnHover={1.1}
+            showMobileWarning={false}
+            showTooltip={true}
+            displayOverlayContent={true}
+            overlayContent={
+              <p className="tilted-card-demo-text">
+                Bhavya Rathore
+              </p>
+            }
           />
         </div>
       </header>
-
+      
       {/* ==== SKILLS SECTION ==== */}
       <section className="about-section">
         <h2 className="section-heading">Skills</h2>
