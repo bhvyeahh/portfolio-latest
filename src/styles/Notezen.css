@@ -12,10 +12,12 @@
 }
 .back-link {
   display: inline-block;
-  color: #bdbdbd;
   font-size: 15px;
   padding: 10px 6px;
   text-decoration: none;
+  
+  /* Default (Dark Mode) */
+  color: #bdbdbd;
 }
 .back-link:hover {
   color: #fff;
@@ -34,6 +36,9 @@
   font-size: 44px;
   margin: 8px 0 6px;
   font-weight: 700;
+  
+  /* Default (Dark Mode) */
+  color: #ffffff;
 }
 
 .project-meta {
@@ -102,6 +107,7 @@
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 12px;
+  color: #ffffff;
 }
 
 .lead {
@@ -116,6 +122,7 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .project-section p {
@@ -171,6 +178,50 @@
   object-fit: cover;
 }
 
+/* ========================================================================= */
+/* ███ FORCE LIGHT MODE OVERRIDES ███ */
+/* This section forces text to be dark when theme is light */
+/* ========================================================================= */
+
+/* 1. Dark Espresso Text for Titles */
+:root[data-theme="light"] .project-title,
+:root[data-theme="light"] .section-title,
+:root[data-theme="light"] .section-subtitle,
+:root[data-theme="light"] .meta-value,
+:root[data-theme="light"] .feature-card h4,
+:root[data-theme="light"] .back-link:hover {
+  color: #3c2f2f !important;
+}
+
+/* 2. Muted Coffee Text for Body/Paragraphs */
+:root[data-theme="light"] .lead,
+:root[data-theme="light"] .project-section p,
+:root[data-theme="light"] .feature-card p,
+:root[data-theme="light"] .logic-list,
+:root[data-theme="light"] .meta-label,
+:root[data-theme="light"] .back-link {
+  color: #5e5046 !important;
+}
+
+/* 3. Light Card Backgrounds */
+:root[data-theme="light"] .feature-card {
+  background: #ffffff !important;
+  border: 1px solid #e6dccb !important; /* Beige border */
+  box-shadow: 0 6px 20px rgba(60, 47, 47, 0.08) !important;
+}
+
+/* 4. Button & Hero Shadow Adjustment */
+:root[data-theme="light"] .btn-live {
+  background: #ffffff !important;
+  color: #3c2f2f !important;
+  border: 1px solid #d4c5b5 !important;
+}
+
+:root[data-theme="light"] .project-hero-image,
+:root[data-theme="light"] .gallery-image {
+  box-shadow: 0 18px 48px rgba(60, 47, 47, 0.12) !important;
+}
+
 
 /* =============================== */
 /* 📱 RESPONSIVE DESIGN */
@@ -178,91 +229,34 @@
 
 /* Tablets - Medium Screens */
 @media (max-width: 1024px) {
-  .project-page {
-    padding: 22px 28px 100px;
-  }
-
-  .project-title {
-    font-size: 38px;
-  }
-
-  .lead,
-  .project-section p {
-    max-width: 100%;
-  }
+  .project-page { padding: 22px 28px 100px; }
+  .project-title { font-size: 38px; }
+  .lead, .project-section p { max-width: 100%; }
 }
 
 /* Small Tablets / Large Phones */
 @media (max-width: 768px) {
-  .project-page {
-    padding: 20px;
-  }
-
-  .project-title {
-    font-size: 32px;
-    line-height: 1.2;
-  }
-
-  .project-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .project-hero-image {
-    border-radius: 12px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
-  }
-
-  .section-title {
-    font-size: 24px;
-  }
-
-  .section-subtitle {
-    font-size: 18px;
-  }
+  .project-page { padding: 20px; }
+  .project-title { font-size: 32px; line-height: 1.2; }
+  .project-meta { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .project-hero-image { border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
+  .section-title { font-size: 24px; }
+  .section-subtitle { font-size: 18px; }
 }
 
 /* Phones */
 @media (max-width: 480px) {
-  .project-page {
-    padding: 16px;
-  }
-
-  .back-link {
-    font-size: 14px;
-  }
-
-  .project-title {
-    font-size: 26px;
-  }
-
-  .gallery-image {
-    border-radius: 10px;
-  }
-
-  .feature-card {
-    padding: 14px;
-  }
-
-  .btn-live {
-    font-size: 14px;
-    padding: 10px 14px;
-  }
+  .project-page { padding: 16px; }
+  .back-link { font-size: 14px; }
+  .project-title { font-size: 26px; }
+  .gallery-image { border-radius: 10px; }
+  .feature-card { padding: 14px; }
+  .btn-live { font-size: 14px; padding: 10px 14px; }
 }
 
 /* Small & very small devices */
 @media (max-width: 360px) {
-  .project-title {
-    font-size: 24px;
-  }
-
-  .section-title {
-    font-size: 22px;
-  }
-
-  .project-section p,
-  .lead {
-    font-size: 15px;
-  }
+  .project-title { font-size: 24px; }
+  .section-title { font-size: 22px; }
+  .project-section p, .lead { font-size: 15px; }
 }

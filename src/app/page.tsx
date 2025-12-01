@@ -1,7 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function HomePage() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("bhavyarathore575@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
   return (
     <div className="home-container">
       {/* ------------ HERO SECTION ------------ */}
@@ -16,17 +27,19 @@ export default function HomePage() {
         </h2>
 
         <p className="hero-description">
-          Product designer and design system specialist with growing experience,
-          focusing on user experience and clean UI systems to create
-          user-centered digital products.
+          I craft modern web apps with precision—smooth UI, powerful backend, and experiences that feel effortless.
         </p>
 
         <div className="hero-btn-group">
-          <Link href="/about">
-            <button className="btn-about">About</button>
+
+          {/* ---- WORKING COPY BUTTON ---- */}
+          <button className="btn-copy" onClick={handleCopy}>
+            {copied ? "✅ Copied!" : "📋 Copy email"}
+          </button>
+
+          <Link target="_blank" href="https://drive.google.com/file/d/1pYQJa1TaxyMya7xO_Luso9aE0-1QEHFo/view?usp=sharing">
+            <button className="btn-about">Resume</button>
           </Link>
-          <button className="btn-copy">📋 Copy email</button>
-          <button className="btn-copy">Resume</button>
         </div>
       </section>
 
@@ -67,6 +80,7 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
       {/* ------------ SKILLS SECTION ------------ */}
       <section className="skills-section">
         <h3 className="section-title">Skills & Tools</h3>
@@ -119,11 +133,13 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       {/* ------------ CONTACT SECTION ------------ */}
       <section className="contact-section">
         <h3 className="contact-title">Got questions?</h3>
         <p className="contact-subtext">
-          I&apos;m always excited to collaborate on innovative and exciting projects!
+          I&apos;m always excited to collaborate on innovative and exciting
+          projects!
         </p>
 
         <div className="contact-flex">
@@ -171,8 +187,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
-        <button className="contact-btn">Schedule a call</button>
       </section>
     </div>
   );

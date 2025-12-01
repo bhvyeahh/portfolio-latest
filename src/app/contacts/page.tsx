@@ -1,5 +1,52 @@
 "use client";
+
+import { useState } from "react";
+import emailjs from "emailjs-com";
+
 export default function ContactPage() {
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.name || !form.email || !form.message) {
+      setStatus("Please fill all fields.");
+      return;
+    }
+
+    emailjs.send(
+      "service_e8reqol",         // <-- REPLACE
+      "template_zv3u6sh",        // <-- REPLACE
+      {
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      },
+      "5LfQbQ0yKpcUjCRmQ"          // <-- REPLACE
+    )
+    .then(() => {
+      setStatus("Message sent successfully!");
+      setForm({ name: "", email: "", message: "" });
+    })
+    .catch(() => {
+      setStatus("Something went wrong. Try again!");
+    });
+  };
+
   return (
     <div className="contact-page">
 
@@ -46,18 +93,42 @@ export default function ContactPage() {
       <h2 className="send-message-title">Send a message</h2>
 
       <div className="contact-form-wrapper">
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
 
           <label className="form-label">Name</label>
-          <input className="form-input" placeholder="Jane Smith" />
+          <input
+            className="form-input"
+            placeholder="Jane Smith"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+          />
 
           <label className="form-label">Email</label>
-          <input className="form-input" placeholder="jane@framer.com" />
+          <input
+            className="form-input"
+            placeholder="jane@framer.com"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+          />
 
           <label className="form-label">Message</label>
-          <textarea className="form-textarea" placeholder="How can I help you?" />
+          <textarea
+            className="form-textarea"
+            placeholder="How can I help you?"
+            name="message"
+            value={form.message}
+            onChange={handleChange}
+          />
 
           <button className="form-submit-btn">Send Message</button>
+
+          {status && (
+            <p style={{ marginTop: "10px", color: "#00c46c" }}>
+              {status}
+            </p>
+          )}
         </form>
       </div>
     </div>

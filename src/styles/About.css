@@ -1,8 +1,10 @@
+/* ABOUT PAGE - Matches Portfolio Theme */
+
 .about-page {
   padding: 60px 80px;
   max-width: 1100px;
   margin: auto;
-  color: #fff;
+  color: #fff; /* Default Dark Mode */
 }
 
 /* HEADER */
@@ -35,6 +37,7 @@
 .about-img {
   border-radius: 20px;
   object-fit: cover;
+  border: 1px solid #262626;
 }
 
 /* SECTIONS */
@@ -55,58 +58,107 @@
   gap: 14px;
 }
 
+/* Base card */
 .skill-card {
-  padding: 14px 18px;
-  background: #1a1a1a;
-  border-radius: 12px;
-  border: 1px solid #262626;
-  font-size: 15px;
-  opacity: 0.95;
+  background: #1c1c1c; /* Default Dark */
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+  cursor: default;
+  color: #ccc;
 }
 
-/* EXPERIENCE */
+/* Smooth glow */
+.skill-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Individual hover colors (unchanged) */
+.skill-card[data-tech="js"]:hover { border-color: #f7df1e; background: rgba(247, 223, 30, 0.08); color: #f7df1e; }
+.skill-card[data-tech="react"]:hover { border-color: #61dafb; background: rgba(97, 218, 251, 0.08); color: #61dafb; }
+.skill-card[data-tech="next"]:hover { border-color: #ffffff; background: rgba(255, 255, 255, 0.07); color: #fff; }
+.skill-card[data-tech="node"]:hover { border-color: #3c873a; background: rgba(60, 135, 58, 0.08); color: #3c873a; }
+.skill-card[data-tech="express"]:hover { border-color: #888; background: rgba(200, 200, 200, 0.05); color: #ccc; }
+.skill-card[data-tech="mongo"]:hover { border-color: #4DB33D; background: rgba(77, 179, 61, 0.08); color: #4DB33D; }
+.skill-card[data-tech="api"]:hover { border-color: #ffb400; background: rgba(255, 180, 0, 0.08); color: #ffb400; }
+.skill-card[data-tech="jwt"]:hover { border-color: #d63aff; background: rgba(214, 58, 255, 0.08); color: #d63aff; }
+.skill-card[data-tech="state"]:hover { border-color: #9b59b6; background: rgba(155, 89, 182, 0.08); color: #9b59b6; }
+.skill-card[data-tech="ux"]:hover { border-color: #00c9a7; background: rgba(0, 201, 167, 0.08); color: #00c9a7; }
+.skill-card[data-tech="css"]:hover { border-color: #38bdf8; background: rgba(56, 189, 248, 0.08); color: #38bdf8; }
+.skill-card[data-tech="git"]:hover { border-color: #f1502f; background: rgba(241, 80, 47, 0.08); color: #f1502f; }
+
+/* Timeline container */
+.experience-timeline {
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 40px;
+}
+
+/* Vertical glowing line (Default Dark) */
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(120,120,120,0.4), rgba(180,180,180,0.1));
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255,255,255,0.12);
+}
+
+/* Experience item */
 .exp-item {
-  display: flex;
-  gap: 20px;
+  position: relative;
   margin-bottom: 40px;
+  padding-left: 20px;
 }
 
-.exp-logo {
-  width: 55px;
-  height: 55px;
-  background: #1f1f1f;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
+/* Circle marker (Default Dark) */
+.exp-marker {
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: #ffffff15;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
-.exp-role {
-  font-size: 20px;
+/* Content */
+.exp-title {
+  font-size: 1.3rem;
   font-weight: 600;
+  color: #fff;
 }
 
 .exp-company {
-  font-size: 16px;
+  font-size: 1rem;
   opacity: 0.7;
+  margin-top: 4px;
 }
 
-.exp-duration {
-  font-size: 14px;
-  opacity: 0.6;
+.exp-date {
+  font-size: 0.9rem;
+  opacity: 0.5;
   margin-bottom: 8px;
 }
 
 .exp-desc {
-  opacity: 0.85;
-  line-height: 1.6;
+  font-size: 1rem;
+  opacity: 0.7;
+  line-height: 1.5;
 }
 
-/* EDUCATION */
+/* EDUCATION (Reusing logic from Exp) */
 .edu-item {
   display: flex;
   gap: 20px;
+  margin-bottom: 30px;
 }
 
 .edu-logo {
@@ -118,11 +170,13 @@
   justify-content: center;
   align-items: center;
   font-weight: 700;
+  color: #fff;
 }
 
 .edu-degree {
   font-size: 20px;
   font-weight: 600;
+  color: #fff;
 }
 
 .edu-school {
@@ -171,6 +225,7 @@
   justify-content: center;
   align-items: center;
   font-size: 22px;
+  color: #fff;
 }
 
 .contact-label {
@@ -188,365 +243,92 @@
   background: #1f1f1f;
   border-radius: 10px;
   border: 1px solid #2a2a2a;
-}
-
-
-
-
-/* Base card */
-.skill-card {
-  background: #1c1c1c;
-  padding: 12px 18px;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  transition: all 0.25s ease;
-  border: 1px solid transparent;
-  cursor: default;
-}
-
-/* Smooth glow */
-.skill-card:hover {
-  transform: translateY(-3px);
-}
-
-/* Individual hover colors */
-.skill-card[data-tech="js"]:hover {
-  border-color: #f7df1e;
-  background: rgba(247, 223, 30, 0.08);
-  color: #f7df1e;
-}
-
-.skill-card[data-tech="react"]:hover {
-  border-color: #61dafb;
-  background: rgba(97, 218, 251, 0.08);
-  color: #61dafb;
-}
-
-.skill-card[data-tech="next"]:hover {
-  border-color: #ffffff;
-  background: rgba(255, 255, 255, 0.07);
   color: #fff;
 }
 
-.skill-card[data-tech="node"]:hover {
-  border-color: #3c873a;
-  background: rgba(60, 135, 58, 0.08);
-  color: #3c873a;
+/* ========================================================================= */
+/* ███ FORCE LIGHT MODE OVERRIDES ███ */
+/* This section guarantees visibility when Light Theme is active */
+/* ========================================================================= */
+
+/* 1. Force Dark Espresso Text on Headers */
+:root[data-theme="light"] .about-title,
+:root[data-theme="light"] .section-heading,
+:root[data-theme="light"] .exp-title,
+:root[data-theme="light"] .edu-degree,
+:root[data-theme="light"] .contact-value {
+  color: #3c2f2f !important;
+  opacity: 1 !important;
 }
 
-.skill-card[data-tech="express"]:hover {
-  border-color: #888;
-  background: rgba(200, 200, 200, 0.05);
-  color: #ccc;
+/* 2. Force Muted Coffee Text on Body/Subtitles */
+:root[data-theme="light"] .about-role,
+:root[data-theme="light"] .about-bio,
+:root[data-theme="light"] .exp-company,
+:root[data-theme="light"] .exp-date,
+:root[data-theme="light"] .exp-desc,
+:root[data-theme="light"] .edu-school,
+:root[data-theme="light"] .edu-duration,
+:root[data-theme="light"] .edu-desc,
+:root[data-theme="light"] .contact-sub,
+:root[data-theme="light"] .contact-label {
+  color: #5e5046 !important;
+  opacity: 1 !important;
 }
 
-.skill-card[data-tech="mongo"]:hover {
-  border-color: #4DB33D;
-  background: rgba(77, 179, 61, 0.08);
-  color: #4DB33D;
+/* 3. Force Light Card Backgrounds */
+:root[data-theme="light"] .skill-card,
+:root[data-theme="light"] .edu-logo,
+:root[data-theme="light"] .contact-icon,
+:root[data-theme="light"] .contact-btn {
+  background-color: #ffffff !important;
+  border: 1px solid #e6dccb !important;
+  color: #3c2f2f !important;
+  box-shadow: 0 4px 12px rgba(60, 47, 47, 0.05);
 }
 
-.skill-card[data-tech="api"]:hover {
-  border-color: #ffb400;
-  background: rgba(255, 180, 0, 0.08);
-  color: #ffb400;
+:root[data-theme="light"] .skill-card:hover {
+  background-color: #fcf8f2 !important;
 }
 
-.skill-card[data-tech="jwt"]:hover {
-  border-color: #d63aff;
-  background: rgba(214, 58, 255, 0.08);
-  color: #d63aff;
+/* 4. Fix Invisible Timeline Line & Dots */
+:root[data-theme="light"] .experience-timeline::before {
+  background: linear-gradient(to bottom, #bcaaa4, rgba(188, 170, 164, 0.1)) !important;
+  box-shadow: none !important;
 }
 
-.skill-card[data-tech="state"]:hover {
-  border-color: #9b59b6;
-  background: rgba(155, 89, 182, 0.08);
-  color: #9b59b6;
+:root[data-theme="light"] .exp-marker {
+  background: #ffffff !important;
+  border-color: #3c2f2f !important;
+  box-shadow: 0 0 6px rgba(60, 47, 47, 0.2) !important;
 }
-
-.skill-card[data-tech="ux"]:hover {
-  border-color: #00c9a7;
-  background: rgba(0, 201, 167, 0.08);
-  color: #00c9a7;
-}
-
-.skill-card[data-tech="css"]:hover {
-  border-color: #38bdf8;
-  background: rgba(56, 189, 248, 0.08);
-  color: #38bdf8;
-}
-
-.skill-card[data-tech="git"]:hover {
-  border-color: #f1502f;
-  background: rgba(241, 80, 47, 0.08);
-  color: #f1502f;
-}
-
-
-
-
-/* Timeline container */
-.experience-timeline {
-  position: relative;
-  margin-top: 2rem;
-  padding-left: 40px;
-}
-
-/* Vertical glowing line */
-.experience-timeline::before {
-  content: "";
-  position: absolute;
-  left: 18px;
-  top: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(120,120,120,0.4),
-    rgba(180,180,180,0.1)
-  );
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(255,255,255,0.12);
-}
-
-/* Experience item */
-.exp-item {
-  position: relative;
-  margin-bottom: 40px;
-  padding-left: 20px;
-}
-
-/* Circle marker */
-.exp-marker {
-  position: absolute;
-  left: -28px;
-  top: 6px;
-  width: 14px;
-  height: 14px;
-  background: #ffffff15;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
-}
-
-/* Content */
-.exp-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.exp-company {
-  font-size: 1rem;
-  opacity: 0.7;
-  margin-top: 4px;
-}
-
-.exp-date {
-  font-size: 0.9rem;
-  opacity: 0.5;
-  margin-bottom: 8px;
-}
-
-.exp-desc {
-  font-size: 1rem;
-  opacity: 0.7;
-  line-height: 1.5;
-}
-
 
 /* =========================================================
    GLOBAL RESPONSIVE FIXES
    ========================================================= */
 
 @media (max-width: 1100px) {
-  .content-wrapper {
-    padding: 40px 40px;
-  }
+  .content-wrapper { padding: 40px 40px; }
 }
 
-/* ========== SIDEBAR ========== */
 @media (max-width: 900px) {
-  .sidebar {
-    position: fixed;
-    left: -270px;
-    top: 0;
-    width: 260px;
-    height: 100vh;
-    z-index: 9999;
-    transition: 0.35s ease;
-  }
-
-  .sidebar.open {
-    left: 0;
-  }
-
-  /* Add hamburger space */
-  .layout-container {
-    padding-left: 0 !important;
-  }
-}
-
-/* ========== HOME PAGE ========== */
-@media (max-width: 850px) {
-  .content-wrapper {
-    padding: 30px 25px;
-    border-radius: 0;
-    margin: 0;
-  }
-
-  .hero-title {
-    font-size: 32px;
-  }
-
-  .hero-subtitle {
-    font-size: 22px;
-  }
-
-  .hero-description {
-    font-size: 16px;
-  }
-
-  .hero-btn-group {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn-about,
-  .btn-copy {
-    width: 100%;
-    text-align: center;
-  }
-
-  .work-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ========== PROJECTS GRID ========== */
-@media (max-width: 768px) {
-  .projects-title {
-    font-size: 32px;
-  }
-
-  .projects-subtext {
-    font-size: 15px;
-  }
-
-  .projects-grid {
-    gap: 26px;
-  }
-
-  .project-card {
-    width: 100%;
-  }
-
-  .project-image {
-    height: 210px;
-  }
-}
-
-/* ========== NOTEZEN CASE STUDY PAGE ========== */
-@media (max-width: 880px) {
-  .project-page {
-    padding: 20px 16px;
-  }
-
-  .project-title {
-    font-size: 32px;
-  }
-
-  .project-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-image {
-    border-radius: 10px;
-  }
-}
-
-@media (max-width: 500px) {
-  .project-title {
-    font-size: 26px;
-  }
-
-  .lead {
-    font-size: 15px;
-  }
-
-  .project-section p {
-    font-size: 14px;
-  }
-}
-
-/* ========== ABOUT PAGE ========== */
-@media (max-width: 900px) {
-  .about-page {
-    padding: 40px 25px;
-  }
-
-  .about-header {
-    flex-direction: column;
-    text-align: left;
-    gap: 20px;
-  }
-
-  .about-title {
-    font-size: 32px;
-  }
-
-  .about-role {
-    font-size: 22px;
-  }
-
-  .about-bio {
-    font-size: 16px;
-  }
-
-  .about-img {
-    width: 100%;
-    max-width: 350px;
-  }
+  .about-page { padding: 40px 25px; }
+  .about-header { flex-direction: column; text-align: left; gap: 20px; }
+  .about-title { font-size: 32px; }
+  .about-role { font-size: 22px; }
+  .about-bio { font-size: 16px; }
+  .about-img { width: 100%; max-width: 350px; }
 }
 
 @media (max-width: 700px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-
-  .exp-item {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .edu-item {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .contact-row {
-    flex-direction: column;
-    gap: 25px;
-  }
+  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .exp-item { flex-direction: column; gap: 10px; }
+  .edu-item { flex-direction: column; gap: 10px; }
+  .contact-row { flex-direction: column; gap: 25px; }
 }
 
-/* ========== EXPERIENCE TIMELINE ========== */
 @media (max-width: 600px) {
-  .experience-timeline {
-    padding-left: 20px;
-  }
-
-  .experience-timeline::before {
-    left: 10px;
-  }
-
-  .exp-marker {
-    left: -18px;
-  }
+  .experience-timeline { padding-left: 20px; }
+  .experience-timeline::before { left: 10px; }
+  .exp-marker { left: -18px; }
 }

@@ -1,6 +1,6 @@
 import PageTransition from "../components/PageTransition";
 import Sidebar from "../components/usableComponents/SidebarLayout";
-import Ribbons from "../components/ui/Ribbons"; 
+
 
 import "./globals.css";
 import "../styles/SideBar.css";
@@ -39,15 +39,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           zIndex: 0,          // Layer 0
           pointerEvents: 'none', // Lets clicks pass through
         }}>
-          <Ribbons 
-            baseThickness={30}
-            // Use bright opacity colors so they pop against dark bg
-            colors={['#888888', '#aaaaaa', '#ffffff']} 
-            speedMultiplier={1.5} 
-            maxAge={800}
-            enableFade={true}
-            enableShaderEffect={true}
-          />
         </div>
 
         {/* === LAYER 2: CONTENT (Sits on top) === */}
