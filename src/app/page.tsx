@@ -37,7 +37,7 @@ export default function HomePage() {
             {copied ? "✅ Copied!" : "📋 Copy email"}
           </button>
 
-          <Link target="_blank" href="https://drive.google.com/file/d/1pYQJa1TaxyMya7xO_Luso9aE0-1QEHFo/view?usp=sharing">
+          <Link target="_blank" href="https://drive.google.com/file/d/1hZP-HaYeEc6q74Fj9ROANWoQ-4ORj82Y/view?usp=sharing">
             <button className="btn-about">Resume</button>
           </Link>
         </div>
